@@ -1,1 +1,106 @@
 @import "../lib/bootstrap/less/bootstrap.less";
+
+@purple-dark: #1C0B2B;
+@blue-light: #e1e2f9;
+@black: #222;
+@white: #EEE;
+
+body {
+  background-color: darken(@black, 3%);
+  color: lighten(@black, 65%);
+  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Oswald", Georgia, serif;
+}
+
+.container {
+  padding: 0;
+
+  @media (min-width: @screen-md-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-sm;
+  }
+}
+
+header.header {
+  background-color: @purple-dark;
+  padding: @padding-large-horizontal * 1.618 0;
+
+  h1 {
+    text-indent: -9999px;
+    background: url(/images/daftlabs.png) no-repeat center top;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    margin: 0 auto @padding-large-horizontal;
+  }
+
+  h2 {
+    font-size: @font-size-h4;
+    text-align: center;
+    color: lighten(@purple-dark, 60%);
+  }
+}
+
+div.section {
+  padding: @padding-large-horizontal * 1.618 @padding-large-horizontal;
+  background-color: @black;
+
+  @media(min-width: @screen-sm-min) {
+    padding-left: @padding-large-horizontal * 1.618;
+    padding-right: @padding-large-horizontal * 1.618;
+  }
+
+  h3,
+  h4 {
+    color: @blue-light;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  h4 {
+    margin-top: @padding-large-horizontal * 1.618;
+  }
+
+  ul {
+    margin-top: @padding-large-horizontal;
+  }
+
+  p:last-of-type,
+  ul:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &.intro {
+    background-color: @blue-light;
+    color: @purple-dark;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &.culture,
+  &.jobs {
+    border-top: 1px solid lighten(@black, 5%);
+  }
+
+  &.contact {
+    background-color: @blue-light;
+    color: @purple-dark;
+
+    h3 {
+      color: @purple-dark;
+    }
+  }
+}
