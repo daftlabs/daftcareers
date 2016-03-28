@@ -97,11 +97,12 @@
   };
 
   function resizeCanvas(initialize) {
-    var dpi = window.devicePixelRatio || 1;
+    var dpi = window.devicePixelRatio || 1
+      , headerElement = document.getElementById('frontPageHeader');
     canvas.width = window.innerWidth * dpi;
-    canvas.height = document.getElementById('frontPageHeader').clientHeight * dpi;
+    canvas.height = headerElement.clientHeight * dpi;
     canvas.style.width = window.innerWidth + 'px';
-    canvas.style.height = document.getElementById('frontPageHeader').clientHeight + 'px';
+    canvas.style.height = headerElement.clientHeight + 'px';
     canvas.getContext('2d').scale(dpi,dpi);
 
     if(initialize) {
