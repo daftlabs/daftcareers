@@ -91,10 +91,6 @@
     });
   }
 
-  window.onload = function() {
-    resizeCanvas(true);
-  };
-
   function resizeCanvas(initialize) {
     var headerElement = document.getElementById('front-page-header');
 
@@ -110,6 +106,10 @@
 
     animate();
   }
+
+  window.onload = function() {
+    resizeCanvas(true);
+  };
 
   window.onresize = function() {
     resizeCanvas(false);
