@@ -20,23 +20,14 @@
 
   function initializeCircleArray() {
     for (var i = 0; i < numCircles ; i++) {
-      var color = Math.floor(Math.random() * (colors.length))
-        , left = Math.floor(Math.random() * (canvas.width +1))
-        , top = Math.floor(Math.random() * (canvas.height + 1))
-        , size = Math.floor(Math.random() * (maxCircleSize - minCircleSize + 1)) + minCircleSize
-        , leftSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor
-        , topSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor;
-
-      var circle = {
-        color: color,
-        left: left,
-        top: top,
-        size: size,
-        leftSpeed: leftSpeed,
-        topSpeed: topSpeed,
-      };
-
-      allCircles.push(circle);
+      allCircles.push({
+        color: Math.floor(Math.random() * (colors.length)),
+        left: Math.floor(Math.random() * (canvas.width +1)),
+        top: Math.floor(Math.random() * (canvas.height + 1)),
+        size: Math.floor(Math.random() * (maxCircleSize - minCircleSize + 1)) + minCircleSize,
+        leftSpeed: (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor,
+        topSpeed: (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor
+      });
     }
   };
 
