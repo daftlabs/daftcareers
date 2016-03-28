@@ -15,7 +15,8 @@
     , numCircles = 100
     , minSpeed = -0.5
     , maxSpeed = 0.5
-    , speedFactor = 10;
+    , speedFactor = 10
+    , dpi = window.devicePixelRatio || 1;
 
   function initializeCircleArray() {
     for (var i = 0; i < numCircles ; i++) {
@@ -45,7 +46,6 @@
       context.fillStyle = colors[currentCircle.color-1];
       context.beginPath();
 
-      var dpi = window.devicePixelRatio || 1;
       var zeroBound = currentCircle.size
         , rightBound = (canvas.width / dpi)  - currentCircle.size
         , bottomBound = (canvas.height / dpi)- currentCircle.size;
@@ -106,8 +106,7 @@
   };
 
   function resizeCanvas(initialize) {
-    var dpi = window.devicePixelRatio || 1
-      , headerElement = document.getElementById('front-page-header');
+    var headerElement = document.getElementById('front-page-header');
 
     canvas.width = window.innerWidth * dpi;
     canvas.height = headerElement.clientHeight * dpi;
