@@ -1,6 +1,9 @@
 node_modules
+bower_components
 dist/js
 dist/css
 assets/lib
 assets/dist/css
 assets/dist/js
+.tmp
+dist
