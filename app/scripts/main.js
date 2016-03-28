@@ -65,14 +65,14 @@
     }
   };
 
-  window.requiresAnimationFrame = (function (callback) {
+  window.requiresAnimationFrame = (function () {
     return (
       window.requestAnimationFrame       ||
       window.webkitRequestAnimationFrame ||
       window.mozRequestAnimationFrame    ||
       window.oRequestAnimationFrame      ||
       window.msRequestAnimationFrame     ||
-      function () {
+      function (callback) {
         window.setTimeout(callback, 1000 / 60);
       }
     );
@@ -87,7 +87,7 @@
     moveCircles();
 
     requiresAnimationFrame(function() {
-      animate()
+      animate();
     });
   }
 
