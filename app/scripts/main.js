@@ -13,8 +13,8 @@
     , minCircleSize = 0.5
     , maxCircleSize = 2
     , numCircles = 100
-    , minSpeed = 0.5
-    , maxSpeed = 6.5
+    , minSpeed = -0.5
+    , maxSpeed = 0.5
     , speedFactor = 10;
 
   function initializeCircleArray() {
@@ -25,11 +25,6 @@
         , size = Math.floor(Math.random() * (maxCircleSize - minCircleSize + 1)) + minCircleSize
         , leftSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor
         , topSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor;
-
-      while(leftSpeed == 0 || topSpeed == 0) {
-        leftSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor;
-        topSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor;
-      }
 
       var circle = {
         color: color,
