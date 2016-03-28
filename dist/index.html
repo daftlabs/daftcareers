@@ -5,12 +5,26 @@
     <title>Daft labs </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+    <div class="container-fluid">
+      <div class="row">
+        <div id="frontPageHeader" class="col-sm-12">
+          <canvas id="headerCanvas" height="600px"></canvas>
+          <div class="headerContent">
+            <div class="companyName">
+              <h1>daft labs</h1>
+            </div>
+            <div class="socialLinks"><a href="https://github.com/daftlabs" class="socialImage"> <img src="/images/github_logo.png" srcset="/images/github_logo@2x.png 2x, /images/github_logo.png 1x"></a><a href="https://facebook.com/daftlabs" class="socialImage"> <img src="/images/fb_logo.png" srcset="/images/fb_logo@2x.png 2x, /images/fb_logo.png 1x"></a><a href="https://facebook.com/daftlabs" class="socialImage"> <img src="/images/twitter_logo.png" srcset="/images/twitter_logo@2x.png 2x, /images/twitter_logo.png 1x"></a></div>
+          </div>
+        </div>
+      </div>
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+    </div>
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -18,6 +32,8 @@
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+      
     </script>
+    <script src="scripts/scripts.min.js"></script>
   </body>
 </html>

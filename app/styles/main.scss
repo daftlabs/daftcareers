@@ -1,11 +1,4 @@
 @import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
-@import 'mixins';
-
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-}
 
 @font-face {
   font-family: 'Avenir Next LT Pro';
@@ -67,6 +60,13 @@ body {
   font-style: normal;
 }
 
+body {
+  background: #fafafa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 300px;
@@ -112,13 +112,8 @@ h1,h2,h3,h4,h5,h6, p {
   width: 100%;
   height: 100%;
   background: rgba(32,31,29,1);
-  background: -moz-linear-gradient(-45deg, rgba(32,31,29,1) 0%, rgba(69,55,68,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(32,31,29,1)), color-stop(100%, rgba(69,55,68,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(32,31,29,1) 0%, rgba(69,55,68,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(32,31,29,1) 0%, rgba(69,55,68,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(32,31,29,1) 0%, rgba(69,55,68,1) 100%);
-  background: linear-gradient(135deg, rgba(32,31,29,1) 0%, rgba(69,55,68,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#201f1d', endColorstr='#453744', GradientType=1 );
+  @include gradient-directional(rgba(32,31,29,1) 0%, rgba(69,55,68,1) 100%, -45deg)
+
 
   h1 {
     color: white;
@@ -142,7 +137,10 @@ h1,h2,h3,h4,h5,h6, p {
   width: 100%;
   position: relative;
   z-index: 2;
-  @include flex-box-center(center, center);
+  display: flex;
+  justify-content: horizontal;
+  flex-direction: column;
+  align-items: vertical;
 }
 
 
