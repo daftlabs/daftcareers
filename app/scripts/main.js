@@ -17,8 +17,8 @@
     , maxSpeed = 0.5
     , expandState = true;
 
-    function buildArray() {
-      for (var i =0; i < numCircles ; i++){
+    function buildCircleArray() {
+      for (var i = 0; i < numCircles ; i++) {
         var color = Math.floor(Math.random() * (colors.length - 1 + 1)) + 1,
           left = Math.floor(Math.random() * (canvas.width - 0 + 1)) + 0,
           top = Math.floor(Math.random() * (canvas.height - 0 + 1)) + 0,
@@ -32,7 +32,15 @@
           topSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed)/10;
         }
 
-        var circle = {color:color, left:left, top:top, size:size, leftSpeed:leftSpeed, topSpeed:topSpeed, expandState:expandState };
+        var circle = {
+          color:color,
+          left:left,
+          top:top, size:size,
+          leftSpeed:leftSpeed,
+          topSpeed:topSpeed,
+          expandState:expandState
+         };
+
         circles.push(circle);
       }
     };
@@ -45,10 +53,10 @@
         if(curCircle.left > canvas.width+curCircle.size){
           curCircle.left = 0-curCircle.size;
           context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
-        }else if(curCircle.left < 0-curCircle.size){
+        } else if(curCircle.left < 0-curCircle.size){
           curCircle.left = canvas.width+curCircle.size;
           context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
-        }else{
+        } else{
           curCircle.left = curCircle.left+curCircle.leftSpeed;
           context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
         }
@@ -56,10 +64,10 @@
         if(curCircle.top > canvas.height+curCircle.size){
           curCircle.top = 0-curCircle.size;
           context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
-        }else if(curCircle.top < 0-curCircle.size){
+        } else if(curCircle.top < 0-curCircle.size){
           curCircle.top = canvas.height+curCircle.size;
           context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
-        }else{
+        } else{
           curCircle.top = curCircle.top+curCircle.topSpeed;
           if(curCircle.size != maxSize && curCircle.size != minSize && curCircle.expandState == false){
             curCircle.size = curCircle.size-0.1;
@@ -124,7 +132,7 @@
       canvas.getContext('2d').scale(dpi,dpi);
 
       if(build) {
-        buildArray();
+        buildCircleArray();
       }
 
       animate();
