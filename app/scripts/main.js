@@ -41,8 +41,8 @@
   };
 
   function moveCircles() {
-    for (var h = 0; h < allCircles.length; h++) {
-      var currentCircle = allCircles[h];
+    for (var i = 0; i < allCircles.length; i++) {
+      var currentCircle = allCircles[i];
       context.fillStyle = colors[currentCircle.color-1];
       context.beginPath();
 
