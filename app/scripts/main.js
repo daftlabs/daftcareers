@@ -1,3 +1,5 @@
+// This makes some dots and moves those dots.
+
 (function() {
   'use strict';
 
@@ -45,8 +47,8 @@
       }
     };
 
-    function build(){
-      for(var h = 0; h < circles.length; h++){
+    function build() {
+      for (var h = 0; h < circles.length; h++) {
         var curCircle = circles[h];
         context.fillStyle = colors[curCircle.color-1];
         context.beginPath();
