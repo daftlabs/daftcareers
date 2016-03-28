@@ -45,10 +45,10 @@
       context.fillStyle = colors[currentCircle.color-1];
       context.beginPath();
 
+      var dpi = window.devicePixelRatio || 1;
       var zeroBound = currentCircle.size
-        , rightBound = canvas.width - currentCircle.size
-        , bottomBound = canvas.height - currentCircle.size;
-
+        , rightBound = (canvas.width / dpi)  - currentCircle.size
+        , bottomBound = (canvas.height / dpi)- currentCircle.size;
       if (currentCircle.top > bottomBound || currentCircle.top < zeroBound) {
         currentCircle.topSpeed = -currentCircle.topSpeed;
       }
