@@ -25,6 +25,7 @@
         , size = Math.floor(Math.random() * (maxCircleSize - minCircleSize + 1)) + minCircleSize
         , leftSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor
         , topSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor;
+
       var circle = {
         color: color,
         left: left,
@@ -60,7 +61,14 @@
       currentCircle.top += currentCircle.topSpeed;
       currentCircle.left += currentCircle.leftSpeed;
 
-      context.arc(currentCircle.left, currentCircle.top, currentCircle.size, 0, 2 * Math.PI, false);
+      context.arc(
+        currentCircle.left,
+        currentCircle.top,
+        currentCircle.size,
+        0,
+        2 * Math.PI,
+        false
+      );
       context.closePath();
       context.fill();
       context.ellipse;
