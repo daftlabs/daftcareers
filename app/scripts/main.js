@@ -19,13 +19,12 @@
 
   function initializeCircleArray() {
     for (var i = 0; i < numCircles ; i++) {
-      var color = Math.floor(Math.random() * (colors.length - 1 + 1)) + 1
+      var color = Math.floor(Math.random() * (colors.length - 1 + 1))
         , left = Math.floor(Math.random() * (canvas.width - 0 + 1)) + 0
         , top = Math.floor(Math.random() * (canvas.height - 0 + 1)) + 0
         , size = Math.floor(Math.random() * (maxCircleSize - minCircleSize + 1)) + minCircleSize
         , leftSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor
         , topSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor;
-
       var circle = {
         color: color,
         left: left,
@@ -75,30 +74,31 @@
       window.oRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
       function (callback) {
-          window.setTimeout(callback, 1000 / 30);
+        window.setTimeout(callback, 1000 / 30);
       };
   })();
 
   function animate() {
-    var canvas = document.getElementById("headerCanvas"),
-        context = canvas.getContext("2d");
+    var canvas = document.getElementById("headerCanvas")
+      , context = canvas.getContext("2d");
 
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     moveCircles();
 
-    requiresAnimationFrame(function () {
+    requiresAnimationFrame(function() {
       animate();
     });
   }
 
-  window.onload = function () {
+  window.onload = function() {
     resizeCanvas(true);
   };
 
   function resizeCanvas(initialize) {
     var dpi = window.devicePixelRatio || 1
       , headerElement = document.getElementById('frontPageHeader');
+
     canvas.width = window.innerWidth * dpi;
     canvas.height = headerElement.clientHeight * dpi;
     canvas.style.width = window.innerWidth + 'px';
@@ -112,7 +112,7 @@
     animate();
   }
 
-  window.onresize = function () {
+  window.onresize = function() {
     resizeCanvas(false);
   };
 })();
