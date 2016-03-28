@@ -119,7 +119,7 @@
       var dpi = window.devicePixelRatio || 1;
       canvas.width = window.innerWidth * dpi;
       canvas.height = document.getElementById('frontPageHeader').clientHeight * dpi;
-      canvas.style.width = window.innerWidth = 'px';
+      canvas.style.width = window.innerWidth + 'px';
       canvas.style.height = document.getElementById('frontPageHeader').clientHeight + 'px';
       canvas.getContext('2d').scale(dpi,dpi);
 
