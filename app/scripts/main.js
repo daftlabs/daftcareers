@@ -86,9 +86,7 @@
 
     moveCircles();
 
-    requiresAnimationFrame(function() {
-      animate();
-    });
+    requiresAnimationFrame(animate());
   }
 
   function resizeCanvas(initialize) {
