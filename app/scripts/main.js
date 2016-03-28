@@ -112,7 +112,7 @@
     canvas.height = headerElement.clientHeight * dpi;
     canvas.style.width = window.innerWidth + 'px';
     canvas.style.height = headerElement.clientHeight + 'px';
-    canvas.getContext('2d').scale(dpi,dpi);
+    canvas.getContext('2d').scale(dpi, dpi);
 
     if(initialize) {
       initializeCircleArray();
