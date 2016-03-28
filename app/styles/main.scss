@@ -98,14 +98,14 @@ h1,h2,h3,h4,h5,h6, p {
   }
 }
 
-#headerCanvas {
+#header-canvas {
   display:block;
   top: 0;
   left: 0;
   position: absolute;
 }
 
-.headerContent {
+.header-content {
   height: 100%;
   width: 100%;
   position: relative;
@@ -116,7 +116,7 @@ h1,h2,h3,h4,h5,h6, p {
   align-items: center;
 }
 
-.socialImage {
+.social-image {
   width: 46px;
   margin-right: 22px;
   display: inline-block;
