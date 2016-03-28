@@ -2,7 +2,7 @@
   'use strict';
 
   var allCircles = []
-    , canvas = document.getElementById("headerCanvas")
+    , canvas = document.getElementById("header-canvas")
     , context = canvas.getContext("2d")
     , opacity = 1
     , colors = [
@@ -19,9 +19,9 @@
 
   function initializeCircleArray() {
     for (var i = 0; i < numCircles ; i++) {
-      var color = Math.floor(Math.random() * (colors.length - 1 + 1))
-        , left = Math.floor(Math.random() * (canvas.width - 0 + 1)) + 0
-        , top = Math.floor(Math.random() * (canvas.height - 0 + 1)) + 0
+      var color = Math.floor(Math.random() * (colors.length))
+        , left = Math.floor(Math.random() * (canvas.width +1))
+        , top = Math.floor(Math.random() * (canvas.height + 1))
         , size = Math.floor(Math.random() * (maxCircleSize - minCircleSize + 1)) + minCircleSize
         , leftSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor
         , topSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed) / speedFactor;
@@ -79,7 +79,7 @@
   })();
 
   function animate() {
-    var canvas = document.getElementById("headerCanvas")
+    var canvas = document.getElementById("header-canvas")
       , context = canvas.getContext("2d");
 
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -97,7 +97,7 @@
 
   function resizeCanvas(initialize) {
     var dpi = window.devicePixelRatio || 1
-      , headerElement = document.getElementById('frontPageHeader');
+      , headerElement = document.getElementById('front-page-header');
 
     canvas.width = window.innerWidth * dpi;
     canvas.height = headerElement.clientHeight * dpi;
