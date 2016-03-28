@@ -1,66 +1,73 @@
 extends layouts/default.jade
 
 block content
-  .container
+  .row
     header.header
-      h1 daft labs
-      h2 we solve marketing and software problems
-    main.main
-      .section.intro
-        p.lead
-          | We are a team of developers, designers and marketers who
-          | work to build startups from the ground up. Our high standards of
-          | quality extend not only to our code, but to the lives of our
-          | employees. We build cool things and have fun while we do it.
-      .section.careers
-        h3 Careers
-        p
-          | We're recruiting Burlington's brightest to strengthen our team and
-          | establish Vermont's premiere software development house.
-        p Up for a challenge? Come work with us.
-      .section.culture
-        h3 Culture
-        p
-          | Our tight-knit team of badasses lives by the motto: work smart,
-          | not hard.
-        h4 Be Excited About Your Work
-        p
-          | Above all else our goal is to get people excited about what they're
-          | doing — clients and employees alike. Our employees work hard to
-          | provide the best possible solutions for clients and are rewarded with
-          | some of the best perks that we could come up with.
-        h4 The Good Life
-        ul
-          li
-            | Burger & Beer Wednesdays (Lunch and drinks on the company once
-            | per week)
-          li 20% time for side projects
-          li Frequent office-wide videogame sessions
-          li Irreverent office attitude
-          li Access to an apartment in NYC for work or pleasure
-          li Beer on tap in the office break room
-          li
-            | The best health insurance plan available — and all copays
-            | are paid by daft labs too!
-      .section.jobs
-        h3 Job Descriptions
-        p.lead
-          | Our general philosophy is that job descriptions are
-          | static and intelligent programmers are dynamic. We like to hire
-          | intelligent programmers regardless of stack. That said, our current
-          | staffing needs include:
-        ul
-          li
-            | Backend WordPress (Genesis Framework, Advanced Custom Fields, WPML
-            | WooCommerce)
-          li Frontend WordPress (Strong in CSS/LESS/SASS, some PHP)
-          li Backend PHP (PHP, MySQL, Laravel, Joomla)
-          li Backend Python (Python, PostgreSQL, Django)
-      .section.contact
-        h3 Get in Touch
-        p.lead
-          | Please send your CV, resume, Github profile, or online
-          | portfolio to 
-          a(href='mailto:careers@daftlabs.com', target='_blank')
-            | careers@daftlabs.com
-          | , with or without a cover letter.
+      .container
+        .col-sm-12
+          h2 daft labs
+          h3.light Solving marketing and software problems
+          hr.big-divide
+  .row
+    .container
+      .col-sm-12
+        main.main
+          .section.intro
+            p.lead
+              | We are a team of developers, designers and marketers who
+              | work to build startups from the ground up.
+            p.lead
+              | Our high standards of
+              | quality extend not only to our code, but to the lives of our
+              | employees. We build cool things and have fun while we do it.
+          .section.careers
+            h3 Careers
+            p
+              | We're recruiting Burlington's brightest to strengthen our team and
+              | establish Vermont's premiere software development house.
+            p Up for a challenge? Come work with us.
+          .section.culture
+            h3 Culture
+            p
+              | Our tight-knit team lives by the motto: work smart, not hard.
+            h4 Be Excited About Your Work
+            p
+              | Above all else our goal is to get people excited about what they're
+              | doing — clients and employees alike. Our employees work to
+              | provide the best possible solutions for clients and are rewarded with
+              | some of the best perks that we could come up with.
+            h4 The Good Life
+            ul
+              li
+                | Burger & Beer Wednesdays (Lunch and drinks on the company once
+                | per week)
+              li 20% time for side projects
+              li Frequent office-wide videogame sessions
+              li Irreverent office attitude
+              li Access to an apartment in NYC for work or pleasure
+              li Beer on tap in the office break room
+              li
+                | The best health insurance plan available — and all copays
+                | are paid by daft labs too!
+          .section.jobs
+            h3 Job Descriptions
+            p.lead
+              | Our general philosophy is that job descriptions are
+              | static and intelligent programmers are dynamic. We like to hire
+              | intelligent programmers regardless of stack. That said, our current
+              | staffing needs include:
+            ul
+              li
+                | Backend WordPress (Genesis Framework, Advanced Custom Fields, WPML
+                | WooCommerce)
+              li Frontend WordPress (Strong in CSS/LESS/SASS, some PHP)
+              li Backend PHP (PHP, MySQL, Laravel, Joomla)
+              li Backend Python (Python, PostgreSQL, Django)
+          .section.contact
+            h3 Get in Touch
+            p.lead
+              | Please send your CV, resume, Github profile, or online
+              | portfolio to 
+              a(href='mailto:careers@daftlabs.com', target='_blank')
+                | careers@daftlabs.com
+              | , with or without a cover letter.
