@@ -91,7 +91,7 @@
     });
   }
 
-  function resizeCanvas(initialize) {
+  function resizeCanvas() {
     var headerElement = document.getElementById('front-page-header');
 
     canvas.width = window.innerWidth * dpi;
@@ -99,19 +99,15 @@
     canvas.style.width = window.innerWidth + 'px';
     canvas.style.height = headerElement.clientHeight + 'px';
     canvas.getContext('2d').scale(dpi, dpi);
-
-    if(initialize) {
-      initializeCircleArray();
-    }
-
-    animate();
   }
 
   window.onload = function() {
-    resizeCanvas(true);
+    resizeCanvas();
+    initializeCircleArray();
+    animate();
   };
 
   window.onresize = function() {
-    resizeCanvas(false);
+    resizeCanvas();
   };
 })();
