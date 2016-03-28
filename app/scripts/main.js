@@ -12,8 +12,8 @@
         'rgba(200, 200, 200,' + opacity + ')',
         'rgba(100, 100, 100,' + opacity + ')'
       ]
-    , minSize = 0.5
-    , maxSize = 2
+    , minCircleSize = 0.5
+    , maxCircleSize = 2
     , numCircles = 100
     , minSpeed = -0.5
     , maxSpeed = 0.5
@@ -24,7 +24,7 @@
         var color = Math.floor(Math.random() * (colors.length - 1 + 1)) + 1,
           left = Math.floor(Math.random() * (canvas.width - 0 + 1)) + 0,
           top = Math.floor(Math.random() * (canvas.height - 0 + 1)) + 0,
-          size = Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize,
+          size = Math.floor(Math.random() * (maxCircleSize - minCircleSize + 1)) + minCircleSize,
           leftSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed)/10,
           topSpeed = (Math.floor(Math.random() * (maxSpeed - minSpeed + 1)) + minSpeed)/10,
           expandState = expandState;
@@ -47,45 +47,45 @@
       }
     };
 
-    function build() {
+    function buildCircles() {
       for (var h = 0; h < circles.length; h++) {
-        var curCircle = circles[h];
-        context.fillStyle = colors[curCircle.color-1];
+        var currentCircle = circles[h];
+        context.fillStyle = colors[currentCircle.color-1];
         context.beginPath();
-        if(curCircle.left > canvas.width+curCircle.size){
-          curCircle.left = 0-curCircle.size;
-          context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
-        } else if(curCircle.left < 0-curCircle.size){
-          curCircle.left = canvas.width+curCircle.size;
-          context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
+        if(currentCircle.left > canvas.width + currentCircle.size) {
+          currentCircle.left = 0 - currentCircle.size;
+          context.arc(currentCircle.left, currentCircle.top, currentCircle.size, 0, 2 * Math.PI, false);
+        } else if(currentCircle.left < 0 - currentCircle.size){
+          currentCircle.left = canvas.width + currentCircle.size;
+          context.arc(currentCircle.left, currentCircle.top, currentCircle.size, 0, 2 * Math.PI, false);
         } else{
-          curCircle.left = curCircle.left+curCircle.leftSpeed;
-          context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
+          currentCircle.left = currentCircle.left + currentCircle.leftSpeed;
+          context.arc(currentCircle.left, currentCircle.top, currentCircle.size, 0, 2 * Math.PI, false);
         }
 
-        if(curCircle.top > canvas.height+curCircle.size){
-          curCircle.top = 0-curCircle.size;
-          context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
-        } else if(curCircle.top < 0-curCircle.size){
-          curCircle.top = canvas.height+curCircle.size;
-          context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
-        } else{
-          curCircle.top = curCircle.top+curCircle.topSpeed;
-          if(curCircle.size != maxSize && curCircle.size != minSize && curCircle.expandState == false){
-            curCircle.size = curCircle.size-0.1;
+        if(currentCircle.top > canvas.height + currentCircle.size) {
+          currentCircle.top = 0 - currentCircle.size;
+          context.arc(currentCircle.left, currentCircle.top, currentCircle.size, 0, 2 * Math.PI, false);
+        } else if(currentCircle.top < 0 - currentCircle.size) {
+          currentCircle.top = canvas.height + currentCircle.size;
+          context.arc(currentCircle.left, currentCircle.top, currentCircle.size, 0, 2 * Math.PI, false);
+        } else {
+          currentCircle.top = currentCircle.top + currentCircle.topSpeed;
+          if(currentCircle.size != maxCircleSize && currentCircle.size != minCircleSize && currentCircle.expandState == false){
+            currentCircle.size = currentCircle.size - 0.1;
           }
-          else if(curCircle.size != maxSize && curCircle.size != minSize && curCircle.expandState == true){
-            curCircle.size = curCircle.size+0.1;
+          else if(currentCircle.size != maxCircleSize && currentCircle.size != minCircleSize && currentCircle.expandState == true){
+            currentCircle.size = currentCircle.size + 0.1;
           }
-          else if(curCircle.size == maxSize && curCircle.expandState == true){
-            curCircle.expandState = false;
-            curCircle.size = curCircle.size-0.1;
+          else if(currentCircle.size == maxCircleSize && currentCircle.expandState == true){
+            currentCircle.expandState = false;
+            currentCircle.size = currentCircle.size - 0.1;
           }
-          else if(curCircle.size == minSize && curCircle.expandState == false){
-            curCircle.expandState = true;
-            curCircle.size = curCircle.size+0.1;
+          else if(currentCircle.size == minCircleSize && currentCircle.expandState == false){
+            currentCircle.expandState = true;
+            currentCircle.size = currentCircle.size + 0.1;
           }
-          context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
+          context.arc(currentCircle.left, currentCircle.top, currentCircle.size, 0, 2 * Math.PI, false);
         }
 
         context.closePath();
