@@ -1,6 +1,3 @@
 node_modules
-dist/js
-dist/css
-assets/lib
-assets/dist/css
-assets/dist/js
+bower_components
+dist
