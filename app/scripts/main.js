@@ -48,7 +48,6 @@
         currentCircle.leftSpeed = -currentCircle.leftSpeed;
       }
 
-
       currentCircle.top += currentCircle.topSpeed;
       currentCircle.left += currentCircle.leftSpeed;
 
