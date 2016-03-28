@@ -48,7 +48,7 @@
 
       var zeroBound = currentCircle.size
         , rightBound = (canvas.width / dpi)  - currentCircle.size
-        , bottomBound = (canvas.height / dpi)- currentCircle.size;
+        , bottomBound = (canvas.height / dpi) - currentCircle.size;
       if (currentCircle.top > bottomBound || currentCircle.top < zeroBound) {
         currentCircle.topSpeed = -currentCircle.topSpeed;
       }
