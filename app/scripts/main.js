@@ -39,7 +39,7 @@
           leftSpeed:leftSpeed,
           topSpeed:topSpeed,
           expandState:expandState
-         };
+        };
 
         circles.push(circle);
       }
