@@ -121,6 +121,7 @@ h3,h4, h5, h6 {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 .social-image {
@@ -149,8 +150,12 @@ h3,h4, h5, h6 {
 .header {
   background: no-repeat url('/images/careers-head.jpg');
   background-position: center;
+  background-size: cover;
   color: white;
   padding: 1rem .5rem;
+  height: 375px;
+  display: flex;
+  align-items: center;
 }
 
 .main {
@@ -160,4 +165,15 @@ h3,h4, h5, h6 {
 
 .light {
   font-weight: 200;
+}
+
+.bottom-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+
+  a {
+    color: white;
+  }
 }
