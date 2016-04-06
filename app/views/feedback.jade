@@ -10,22 +10,22 @@ html
 		link(rel='script' href='scripts/satisfaction.js')
 	body
 		.container-fluid.full-height
-		.row
-			header.header
+			.row
+				header.header
+					.container
+						.col-sm-12
+							h2 Thanks for letting us know how we did!
+			.row
 				.container
 					.col-sm-12
-						h2 Thanks for letting us know how we did!
-		.row
-			.container
-				.col-sm-12
-					main.main
-						p.thanks We love you long time
-		.row
-			.container
-				form#satisfaction(action="action=https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec" method="get")
-					input#result(type="hidden",
-						value='<?php echo $_GET["result"]; ?>',
-						name="satisfaction")
-					input#origin(type="hidden",
-						value='<?php echo $_GET["origin"]; ?>',
-						name="origin")
+						main.main
+							p.thanks We love you long time
+			.row
+				.container
+					form#satisfaction(action="action=https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec" method="get")
+						input#result(type="hidden",
+							value='<?php echo $_GET["result"]; ?>',
+							name="satisfaction")
+						input#origin(type="hidden",
+							value='<?php echo $_GET["origin"]; ?>',
+							name="origin")
