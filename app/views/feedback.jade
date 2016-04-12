@@ -7,12 +7,14 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
     link(rel='stylesheet' href='styles/main.css')
+    script(type="text/javascript" src="https://l2.io/ip.js?var=myip")
     script.
       window.onload = function () {
         var satisfaction = getQueryVariable('satisfaction');
         var origin = getQueryVariable('origin');
         document.getElementById('result').value = satisfaction;
         document.getElementById('origin').value = origin;
+        document.getElementById('ip').value = myip;
         document.getElementById('satisfaction').submit();
       }
       function getQueryVariable(variable) {
@@ -43,6 +45,9 @@ html
             input#origin(type="hidden",
               value="",
               name="origin")
+            input#ip(type="hidden",
+              value="",
+              name="ip")
             input#invisible-button(type="submit",
               value="Submit"
               name="invisible-button")
