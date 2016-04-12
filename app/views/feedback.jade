@@ -8,10 +8,13 @@ html
 
     link(rel='stylesheet' href='styles/main.css')
     script.
-      window.onload = (function() {
-        setInputValues();
-      });
-
+      window.onload = function () {
+        var satisfaction = getQueryVariable('satisfaction');
+        var origin = getQueryVariable('origin');
+        document.getElementById('result').value = satisfaction;
+        document.getElementById('origin').value = origin;
+        document.getElementById('satisfaction').submit();
+      }
       function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
         var vars = query.split('&');
@@ -20,14 +23,6 @@ html
             if(pair[0] === variable){return pair[1];}
         }
         return(false);
-      }
-
-      function setInputValues() {
-        var satisfaction = getQueryVariable('satisfaction');
-        var origin = getQueryVariable('origin');
-          document.getElementById('result').value = satisfaction;
-          document.getElementById('origin').value = origin;
-          document.getElementById('satisfaction').submit();
       }
 
   body
