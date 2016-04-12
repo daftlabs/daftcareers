@@ -7,7 +7,29 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
     link(rel='stylesheet' href='styles/main.css')
-    link(rel='script' href='scripts/satisfaction.js')
+    script.
+      window.onload = (function() {
+        setInputValues();
+      });
+
+      function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i=0; i<vars.length; i++) {
+          var pair = vars[i].split('=');
+            if(pair[0] === variable){return pair[1];}
+        }
+        return(false);
+      }
+
+      function setInputValues() {
+        var satisfaction = getQueryVariable('satisfaction');
+        var origin = getQueryVariable('origin');
+          document.getElementById('result').value = satisfaction;
+          document.getElementById('origin').value = origin;
+          document.getElementById('satisfaction').submit();
+      }
+
   body
     .container-fluid.full-height
       .row
@@ -17,7 +39,7 @@ html
               h2 Thanks for the feedback!
       .row
         .container
-          form#satisfaction(action="action=https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec" method="get")
+          form#satisfaction(action="https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec" method="get")
             input#result(type="hidden",
               value="",
               name="result")
@@ -25,4 +47,5 @@ html
               value="",
               name="origin")
             input#invisible-button(type="submit",
-              value="Submit")
+              value="Submit"
+              name="invisible-button")
