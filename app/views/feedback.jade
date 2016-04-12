@@ -7,7 +7,10 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
     link(rel='stylesheet' href='styles/main.css')
-    link(rel='script' href='scripts/satisfaction.js')
+    script(type="text/javascript" src="https://l2.io/ip.js?var=myip")
+    script(type="text/javascript" src="/scripts/satisfaction.js")
+
+
   body
     .container-fluid.full-height
       .row
@@ -17,12 +20,16 @@ html
               h2 Thanks for the feedback!
       .row
         .container
-          form#satisfaction(action="action=https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec" method="get")
+          form#satisfaction(action="https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec" method="get")
             input#result(type="hidden",
               value="",
               name="result")
             input#origin(type="hidden",
               value="",
               name="origin")
+            input#ip(type="hidden",
+              value="",
+              name="ip")
             input#invisible-button(type="submit",
-              value="Submit")
+              value="Submit"
+              name="invisible-button")
