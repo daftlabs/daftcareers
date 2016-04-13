@@ -12,7 +12,7 @@ module.exports = function(gulp, $, reload, gutil) {
       entries: paths.srcPaths.scripts + '/main.js',
       debug: true,
     });
-
+    b.add(paths.srcPaths.scripts + '/satisfaction.js')
     b.transform(debowerify);
     b.transform(babelify);
     b.transform(browserifyShim);
