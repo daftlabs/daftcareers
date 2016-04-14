@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
   var satisfaction = getQueryVariable('satisfaction');
   var origin = getQueryVariable('origin');
   document.getElementById('result').value = satisfaction;
