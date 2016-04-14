@@ -4,10 +4,9 @@ $(function() {
   document.getElementById('result').value = satisfaction;
   document.getElementById('origin').value = origin;
   document.getElementById('ip').value = myip;
-  var formData = $('form').serialize();
   $.ajax({
     url: 'https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec',
-    data: formData,
+    data: $('form').serialize(),
     type: 'GET',
     crossDomain: true,
     dataType: 'jsonp',
