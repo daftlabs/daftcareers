@@ -6,7 +6,7 @@ $(document).ready(function() {
   document.getElementById('ip').value = myip;
 });
 
-window.load(function() {
+window.onload = function() {
   var formData = $('form').serialize();
   $.ajax({
     url: 'https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec',
@@ -15,7 +15,7 @@ window.load(function() {
     crossDomain: true,
     dataType: 'jsonp',
   });
-});
+};
 
 function getQueryVariable(variable) {
   var vars = window.location.search.substring(1).split('&');
