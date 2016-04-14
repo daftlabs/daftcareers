@@ -6,6 +6,7 @@ window.onload = function () {
   document.getElementById('ip').value = myip;
   document.getElementById('satisfaction').submit();
 }
+
 function getQueryVariable(variable) {
   var vars = window.location.search.substring(1).split('&');
   for (var i = 0; i < vars.length; i++) {

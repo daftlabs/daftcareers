@@ -8,18 +8,15 @@ html
 
     link(rel='stylesheet' href='styles/main.css')
     script(type="text/javascript" src="https://l2.io/ip.js?var=myip")
-    script(type="text/javascript" src="/scripts/satisfaction.js")
+    script(type="text/javascript" src="/scripts/satisfaction.min.js")
 
 
   body
     .container-fluid.full-height
-      .row
-        header.header
+      .thanks
           .container
             .col-sm-12
               h2 Thanks for the feedback!
-      .row
-        .container
           form#satisfaction(action="https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec" method="get")
             input#result(type="hidden",
               value="",
