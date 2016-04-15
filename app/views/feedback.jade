@@ -8,7 +8,8 @@ html
 
     link(rel='stylesheet' href='styles/main.css')
     script(type="text/javascript" src="https://l2.io/ip.js?var=myip")
-    script(type="text/javascript" src="/scripts/satisfaction.js")
+    script(type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js")
+    script(type="text/javascript" src="/support/satisfaction.js")
 
 
   body
@@ -20,7 +21,7 @@ html
               h2 Thanks for the feedback!
       .row
         .container
-          form#satisfaction(action="https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec" method="get")
+          form#satisfaction
             input#result(type="hidden",
               value="",
               name="result")

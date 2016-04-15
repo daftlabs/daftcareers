@@ -1,11 +1,18 @@
-window.onload = function () {
+$(function() {
   var satisfaction = getQueryVariable('satisfaction');
   var origin = getQueryVariable('origin');
   document.getElementById('result').value = satisfaction;
   document.getElementById('origin').value = origin;
   document.getElementById('ip').value = myip;
-  document.getElementById('satisfaction').submit();
-}
+  $.ajax({
+    url: 'https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec',
+    data: $('form').serialize(),
+    type: 'GET',
+    crossDomain: true,
+    dataType: 'jsonp',
+  });
+});
+
 function getQueryVariable(variable) {
   var vars = window.location.search.substring(1).split('&');
   for (var i = 0; i < vars.length; i++) {
