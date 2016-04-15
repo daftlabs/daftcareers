@@ -1,8 +1,10 @@
 $(function() {
   var satisfaction = getQueryVariable('satisfaction');
   var origin = getQueryVariable('origin');
+  var email = getQueryVariable('email');
   document.getElementById('result').value = satisfaction;
   document.getElementById('origin').value = origin;
+  document.getElementById('email').value = email;
   document.getElementById('ip').value = myip;
   $.ajax({
     url: 'https://script.google.com/macros/s/AKfycbxtl0qaUunta4r6QaqSNrQookBQ6SuGN2h8VzPvn8MzK_MDDJkw/exec',
